@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -5,32 +7,39 @@ public class Main {
 
         SampleLogger sampleLogger = new SampleLogger();
 
-        // count of arguments check
+        // count of arguments OR help command: check
         if (args.length < 1) {
             sampleLogger.error_no_arguments();
+            return;
+        } else if (args[0].equals("-help") || args[0].equals("--help") || args[0].equals("help")) {
+            sampleLogger.help();
             return;
         } else if (args.length != 3) {
             sampleLogger.error_count_of_args();
             return;
         }
 
-        // arguments validity check
-        if (isRegexValid(args[0]) && isPathValid(args[1]) && isNameValid(args[2])) {
-            RegexFacilitator regexFacilitator = new RegexFacilitator();
-            regexFacilitator.run(args[0], args[1], args[2]);
-        } else {
+        // arguments validity: check
+        if (!isRegexValid(args[0]) || !isPathValid(args[1]) || !isNameValid(args[2])) {
             sampleLogger.error_invalid_flags();
+            return;
         }
+
+        RegexFacilitator regexFacilitator = new RegexFacilitator();
+        regexFacilitator.run(args[0], args[1], args[2]);
 
     }
 
     public static boolean isRegexValid(String input_regex) {
-        boolean answer = false;
+        boolean answer = true;
 
-        if (!input_regex.isBlank()) {
-            answer = true;
+        try {
+            Pattern.compile(input_regex);
+        } catch (Exception e) {
+            answer = false;
+            //noinspection CallToPrintStackTrace
+            e.printStackTrace();
         }
-
         return answer;
     }
 

@@ -16,4 +16,9 @@ public class SampleLogger {
         System.out.println("// Invalid arguments provided.");
         System.out.println("// Please verify your input. More instructions by --help or -help");
     }
+
+    public void help(){
+        System.out.println("// JAVA_LOG_REGEX [ HELP ]");
+    }
+
 }
