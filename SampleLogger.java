@@ -19,6 +19,10 @@ public class SampleLogger {
 
     public void help(){
         System.out.println("// JAVA_LOG_REGEX [ HELP ]");
+        System.out.println("// bla");
+        System.out.println("// bla");
+        System.out.println("// bla");
+        System.out.println("// bla");
     }
 
 }

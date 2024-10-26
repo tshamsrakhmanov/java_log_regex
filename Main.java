@@ -1,9 +1,11 @@
+import java.io.File;
 import java.util.regex.Pattern;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static final String REGEX_PATTERN = "^[A-Za-z0-9.]{1,255}$";
 
+    public static void main(String[] args) {
 
         SampleLogger sampleLogger = new SampleLogger();
 
@@ -46,21 +48,21 @@ public class Main {
     public static boolean isPathValid(String path_to_folder) {
         boolean answer = false;
 
-        if (!path_to_folder.isBlank()) {
+        File file = new File(path_to_folder);
+
+        if (file.isDirectory()) {
             answer = true;
         }
-
         return answer;
     }
 
     public static boolean isNameValid(String input_filename) {
-        boolean answer = false;
 
-        if (!input_filename.isBlank()) {
-            answer = true;
+        if (input_filename == null) {
+            return false;
         }
+        return input_filename.matches(REGEX_PATTERN);
 
-        return answer;
     }
 
 
