@@ -24,7 +24,7 @@ public class SampleRegexFinder {
                 int applicable_strings = 0;
                 String name_of_file = listOfFile.getName();
 
-                // create folder right beside of inpected files
+                // create folder right beside of inspected files
                 File theDir = new File(input_path + "/regex_passed/");
                 if (!theDir.exists()){
                     theDir.mkdirs();
