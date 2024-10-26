@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 
 public class Main {
 
-    public static final String REGEX_PATTERN = "^[A-Za-z0-9.]{1,255}$";
+    public static final String REGEX_PATTERN = "^[\\w,\\s-]+\\.[A-Za-z]{3}$";
 
     public static void main(String[] args) {
 
@@ -27,8 +27,8 @@ public class Main {
             return;
         }
 
-        RegexFacilitator regexFacilitator = new RegexFacilitator();
-        regexFacilitator.run(args[0], args[1], args[2]);
+        SampleRegexFinder sampleRegexFinder = new SampleRegexFinder();
+        sampleRegexFinder.run(args[0], args[1], args[2]);
 
     }
 
@@ -39,8 +39,6 @@ public class Main {
             Pattern.compile(input_regex);
         } catch (Exception e) {
             answer = false;
-            //noinspection CallToPrintStackTrace
-            e.printStackTrace();
         }
         return answer;
     }
