@@ -3,6 +3,7 @@ import java.util.regex.Pattern;
 
 public class Main {
 
+
     public static final String REGEX_PATTERN = "^[\\w,\\s-]+\\.[A-Za-z]{3}$";
 
     public static void main(String[] args) {
