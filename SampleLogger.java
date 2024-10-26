@@ -27,7 +27,12 @@ public class SampleLogger {
 
     public void error_no_files_detected(){
         System.out.println("// JAVA_LOG_REGEX [ ERROR ]");
-        System.out.println("// No files detected by path.");
+        System.out.println("// No files or no regex applicable strings are detected by path.");
+    }
+
+    public void success(){
+        System.out.println("// JAVA_LOG_REGEX [ INFO ]");
+        System.out.println("// Success!");
     }
 
 }

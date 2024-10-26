@@ -28,8 +28,13 @@ public class Main {
         }
 
         SampleRegexFinder sampleRegexFinder = new SampleRegexFinder();
-        sampleRegexFinder.run(args[0], args[1], args[2]);
 
+        try {
+            sampleRegexFinder.run(args[0], args[1], args[2]);
+        } catch (Exception e) {
+            //noinspection ThrowablePrintedToSystemOut
+            System.out.println(e);
+        }
     }
 
     public static boolean isRegexValid(String input_regex) {
