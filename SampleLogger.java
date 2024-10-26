@@ -19,7 +19,7 @@ public class SampleLogger {
 
     public void help(){
         System.out.println("JAVA_LOG_REGEX [ HELP ]");
-        System.out.println("Usage: java -jar [REGEX] [PATH] [FILE NAME]");
+        System.out.println("Usage: java -jar <jar filename> [REGEX] [PATH] [FILE NAME]");
         System.out.println("[REGEX]{mandatory}");
         System.out.println("    Regular expression by which each string of log file(s) will be matched");
         System.out.println("    Matching process performed based on partly-matches, not a full-string");
