@@ -4,7 +4,8 @@
 
 
 ```
-JAVA_LOG_REGEX [ HELP ]
+JAVA_LOG_REGEX
+
 Usage: java -jar <jar_name> [REGEX] [PATH] [FILE NAME]
 [REGEX]{mandatory}
     Regular expression by which each string of log file(s) will be matched
